@@ -7,15 +7,26 @@
 
     public partial class NewLocationForm : Form
     {
-        public NewLocationForm()
+        public NewLocationForm(Location location = null)
         {
             InitializeComponent();
 
-            TbName.Text = @"HNBK";
-            TbNumber.Text = @"50";
-            TbPostcode.Text = @"45144";
-            TbStreet.Text = @"Dahnstraße";
-            TbTown.Text = @"Essen";
+            if (location != null)
+            {
+                TbName.Text = location.Name;
+                TbNumber.Text = location.Number;
+                TbPostcode.Text = location.Postcode;
+                TbStreet.Text = location.Street;
+                TbTown.Text = location.Town;
+            }
+            else
+            {
+                TbName.Text = @"HNBK";
+                TbNumber.Text = @"50";
+                TbPostcode.Text = @"45144";
+                TbStreet.Text = @"Dahnstraße";
+                TbTown.Text = @"Essen";
+            }
         }
 
         public Location NewLocation { get; set; }

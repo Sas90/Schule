@@ -327,5 +327,65 @@
         {
             SortAppointments(new AppointmentByDescriptionComparer());
         }
+
+        private void BtnEditAppointment_Click(object sender, EventArgs e)
+        {
+            if (OlvAppointments.SelectedObject == null)
+                return;
+
+            Appointment currentAppointment = OlvAppointments.SelectedObject as Appointment;
+
+            if (currentAppointment == null)
+                return;
+
+            NewAppointmentForm frm = new NewAppointmentForm(_Persons, _Locations, currentAppointment);
+            frm.ShowDialog();
+
+            if (frm.NewAppointment == null)
+                return;
+
+            currentAppointment.Clone(frm.NewAppointment);
+            OlvAppointments.RefreshObject(currentAppointment);
+        }
+
+        private void BtnEditLocation_Click(object sender, EventArgs e)
+        {
+            if (OlvLocations.SelectedObject == null)
+                return;
+
+            Location currentLocation = OlvLocations.SelectedObject as Location;
+
+            if (currentLocation == null)
+                return;
+
+            NewLocationForm frm = new NewLocationForm(currentLocation);
+            frm.ShowDialog();
+
+            if (frm.NewLocation == null)
+                return;
+
+            currentLocation.Clone(frm.NewLocation);
+            OlvLocations.RefreshObject(currentLocation);
+        }
+
+        private void BtnEditPerson_Click(object sender, EventArgs e)
+        {
+            if (OlvPersons.SelectedObject == null)
+                return;
+
+            Person currentPerson = OlvPersons.SelectedObject as Person;
+
+            if (currentPerson == null)
+                return;
+
+            NewPersonForm frm = new NewPersonForm(currentPerson);
+            frm.ShowDialog();
+
+            if (frm.Newperson == null)
+                return;
+
+            currentPerson.Clone(frm.Newperson);
+            OlvPersons.RefreshObject(currentPerson);
+        }
     }
 }

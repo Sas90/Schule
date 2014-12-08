@@ -58,7 +58,7 @@
             this.BtnAdd.Name = "BtnAdd";
             this.BtnAdd.Size = new System.Drawing.Size(75, 23);
             this.BtnAdd.TabIndex = 4;
-            this.BtnAdd.Text = "Hinzufügen";
+            this.BtnAdd.Text = "Speichern";
             this.BtnAdd.UseVisualStyleBackColor = true;
             this.BtnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
@@ -144,6 +144,8 @@
             this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.BtnAdd);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximumSize = new System.Drawing.Size(300, 194);
+            this.MinimumSize = new System.Drawing.Size(300, 194);
             this.Name = "NewAppointmentForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Neuer Termin";

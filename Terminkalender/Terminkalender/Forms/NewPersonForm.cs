@@ -7,15 +7,28 @@
 
     public partial class NewPersonForm : Form
     {
-        public NewPersonForm()
+        public NewPersonForm(Person person = null)
         {
             InitializeComponent();
-            TbFirstname.Text = "Hannelore";
-            TbLastname.Text = "Meier";
-            TbStreet.Text = "Kanalbrücke";
-            TbNr.Text = "1";
-            TbPostCode.Text = "12345";
-            TbTown.Text = "Marxloh";
+
+            if (person != null)
+            {
+                TbFirstname.Text = person.FirstName;
+                TbLastname.Text = person.LastName;
+                TbStreet.Text = person.Street;
+                TbNr.Text = person.Nr;
+                TbPostCode.Text = person.PostCode;
+                TbTown.Text = person.Town;
+            }
+            else
+            {
+                TbFirstname.Text = @"Hannelore";
+                TbLastname.Text = @"Meier";
+                TbStreet.Text = @"Kanalbrücke";
+                TbNr.Text = @"1";
+                TbPostCode.Text = @"12345";
+                TbTown.Text = @"Marxloh";
+            }
         }
 
         public Person Newperson { get; set; }

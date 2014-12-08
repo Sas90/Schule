@@ -42,5 +42,15 @@
                 return lastNameComparer;
             return string.Compare(FirstName, p.FirstName, StringComparison.InvariantCulture);
         }
+
+        public void Clone(Person person)
+        {
+            FirstName = person.FirstName;
+            LastName = person.LastName;
+            Street = person.Street;
+            Nr = person.Nr;
+            PostCode = person.PostCode;
+            Town = person.Town;
+        }
     }
 }

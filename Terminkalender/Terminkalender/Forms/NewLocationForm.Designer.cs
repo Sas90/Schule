@@ -64,7 +64,7 @@
             this.BtnAdd.Name = "BtnAdd";
             this.BtnAdd.Size = new System.Drawing.Size(75, 23);
             this.BtnAdd.TabIndex = 2;
-            this.BtnAdd.Text = "Hinzufügen";
+            this.BtnAdd.Text = "Speichern";
             this.BtnAdd.UseVisualStyleBackColor = true;
             this.BtnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
@@ -159,6 +159,8 @@
             this.Controls.Add(this.BtnAdd);
             this.Controls.Add(this.TbName);
             this.Controls.Add(this.label1);
+            this.MaximumSize = new System.Drawing.Size(300, 213);
+            this.MinimumSize = new System.Drawing.Size(300, 213);
             this.Name = "NewLocationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Neuer Ort";

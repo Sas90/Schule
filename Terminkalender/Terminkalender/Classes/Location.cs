@@ -28,5 +28,14 @@
             Location l = (Location)obj;
             return string.Compare(Name, l.Name, StringComparison.InvariantCulture);
         }
+
+        public void Clone(Location location)
+        {
+            Name = location.Name;
+            Street = location.Street;
+            Number = location.Number;
+            Postcode = location.Postcode;
+            Town = location.Town;
+        }
     }
 }

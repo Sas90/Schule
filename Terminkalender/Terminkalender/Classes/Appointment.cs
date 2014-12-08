@@ -19,5 +19,13 @@
         public DateTime TimeOfAppointment { get; set; }
 
         public string Description { get; set; }
+
+        public void Clone(Appointment appointment)
+        {
+            PersonOfAppointment = appointment.PersonOfAppointment;
+            LocationOfAppointment = appointment.LocationOfAppointment;
+            TimeOfAppointment = appointment.TimeOfAppointment;
+            Description = appointment.Description;
+        }
     }
 }

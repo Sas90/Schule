@@ -82,7 +82,7 @@
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(75, 23);
             this.BtnSave.TabIndex = 6;
-            this.BtnSave.Text = "Hinzufügen";
+            this.BtnSave.Text = "Speichern";
             this.BtnSave.UseVisualStyleBackColor = true;
             this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
@@ -179,9 +179,11 @@
             this.Controls.Add(this.TbFirstname);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MaximumSize = new System.Drawing.Size(300, 232);
+            this.MinimumSize = new System.Drawing.Size(300, 232);
             this.Name = "NewPersonForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "NewPersonForm";
+            this.Text = "Neue Person";
             this.ResumeLayout(false);
             this.PerformLayout();
 

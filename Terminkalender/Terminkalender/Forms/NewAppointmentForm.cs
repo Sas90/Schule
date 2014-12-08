@@ -8,14 +8,25 @@
 
     public partial class NewAppointmentForm : Form
     {
-        public NewAppointmentForm(List<Person> persons, List<Location> locations)
+        public NewAppointmentForm(List<Person> persons, List<Location> locations, Appointment appointment = null)
         {
             InitializeComponent();
             CbxLocation.DataSource = locations;
             CbxLocation.DisplayMember = "Name";
             CbxPerson.DataSource = persons;
             CbxPerson.DisplayMember = "CompleteName";
-            TbName.Text = @"Neuer Termin";
+
+            if (appointment != null)
+            {
+                TbName.Text = appointment.Description;
+                CbxLocation.SelectedItem = appointment.LocationOfAppointment;
+                CbxPerson.SelectedItem = appointment.PersonOfAppointment;
+                dateTimePicker1.Value = appointment.TimeOfAppointment;
+            }
+            else
+            {
+                TbName.Text = @"Neuer Termin";
+            }
         }
 
         public Appointment NewAppointment { get; set; }
