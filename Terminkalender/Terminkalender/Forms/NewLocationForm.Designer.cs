@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.TbName = new System.Windows.Forms.TextBox();
-            this.BtnAdd = new System.Windows.Forms.Button();
+            this.BtnSave = new System.Windows.Forms.Button();
             this.BtnCancel = new System.Windows.Forms.Button();
             this.TbStreet = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -58,18 +58,19 @@
             this.TbName.Size = new System.Drawing.Size(203, 20);
             this.TbName.TabIndex = 1;
             // 
-            // BtnAdd
+            // BtnSave
             // 
-            this.BtnAdd.Location = new System.Drawing.Point(116, 142);
-            this.BtnAdd.Name = "BtnAdd";
-            this.BtnAdd.Size = new System.Drawing.Size(75, 23);
-            this.BtnAdd.TabIndex = 2;
-            this.BtnAdd.Text = "Speichern";
-            this.BtnAdd.UseVisualStyleBackColor = true;
-            this.BtnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
+            this.BtnSave.Location = new System.Drawing.Point(116, 142);
+            this.BtnSave.Name = "BtnSave";
+            this.BtnSave.Size = new System.Drawing.Size(75, 23);
+            this.BtnSave.TabIndex = 2;
+            this.BtnSave.Text = "Speichern";
+            this.BtnSave.UseVisualStyleBackColor = true;
+            this.BtnSave.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
             // BtnCancel
             // 
+            this.BtnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.BtnCancel.Location = new System.Drawing.Point(197, 142);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(75, 23);
@@ -144,8 +145,10 @@
             // 
             // NewLocationForm
             // 
+            this.AcceptButton = this.BtnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.BtnCancel;
             this.ClientSize = new System.Drawing.Size(284, 175);
             this.Controls.Add(this.TbTown);
             this.Controls.Add(this.label5);
@@ -156,7 +159,7 @@
             this.Controls.Add(this.TbStreet);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.BtnCancel);
-            this.Controls.Add(this.BtnAdd);
+            this.Controls.Add(this.BtnSave);
             this.Controls.Add(this.TbName);
             this.Controls.Add(this.label1);
             this.MaximumSize = new System.Drawing.Size(300, 213);
@@ -173,7 +176,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TbName;
-        private System.Windows.Forms.Button BtnAdd;
+        private System.Windows.Forms.Button BtnSave;
         private System.Windows.Forms.Button BtnCancel;
         private System.Windows.Forms.TextBox TbStreet;
         private System.Windows.Forms.Label label2;

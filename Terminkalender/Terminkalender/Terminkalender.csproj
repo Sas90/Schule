@@ -56,6 +56,9 @@
     <Compile Include="Classes\AppointmentByPersonComparer.cs" />
     <Compile Include="Classes\Location.cs" />
     <Compile Include="Classes\Person.cs" />
+    <Compile Include="Classes\PersonByLastNameComparer.cs" />
+    <Compile Include="Classes\PersonByPostCodeComparer.cs" />
+    <Compile Include="Classes\PersonByTownComparer.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

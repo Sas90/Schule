@@ -2,7 +2,7 @@
 {
     using System;
 
-    public class Person : IComparable
+    public class Person
     {
         public Person(string firstname, string lastname, string street, string nr, string postcode, string town)
         {
@@ -34,15 +34,6 @@
             }
         }
 
-        public int CompareTo(object obj)
-        {
-            Person p = (Person)obj;
-            int lastNameComparer = string.Compare(LastName, p.LastName, StringComparison.InvariantCulture);
-            if (lastNameComparer != 0)
-                return lastNameComparer;
-            return string.Compare(FirstName, p.FirstName, StringComparison.InvariantCulture);
-        }
-
         public void Clone(Person person)
         {
             FirstName = person.FirstName;
@@ -51,6 +42,22 @@
             Nr = person.Nr;
             PostCode = person.PostCode;
             Town = person.Town;
+        }
+
+        public override bool Equals(object o)
+        {
+            Person person = o as Person;
+            if (person == null)
+                return false;
+
+            bool rv = FirstName == person.FirstName;
+            rv = rv && LastName == person.LastName;
+            rv = rv && Street == person.Street;
+            rv = rv && Nr == person.Nr;
+            rv = rv && PostCode == person.PostCode;
+            rv = rv && Town == person.Town;
+
+            return rv;
         }
     }
 }

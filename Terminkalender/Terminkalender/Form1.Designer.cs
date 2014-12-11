@@ -38,13 +38,15 @@
             this.BtnDeleteAppointment = new System.Windows.Forms.Button();
             this.TcMain = new System.Windows.Forms.TabControl();
             this.TpAppointments = new System.Windows.Forms.TabPage();
+            this.BtnEditAppointment = new System.Windows.Forms.Button();
             this.BtnSortAppointments = new System.Windows.Forms.Button();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.CmsAppointments = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.TsmiSortByDescription = new System.Windows.Forms.ToolStripMenuItem();
             this.TsmiSortByPerson = new System.Windows.Forms.ToolStripMenuItem();
             this.TsmiSortByLocation = new System.Windows.Forms.ToolStripMenuItem();
             this.TsmiSortByDate = new System.Windows.Forms.ToolStripMenuItem();
             this.TpPersons = new System.Windows.Forms.TabPage();
+            this.BtnEditPerson = new System.Windows.Forms.Button();
             this.BtnSortPersons = new System.Windows.Forms.Button();
             this.TbFilterPerson = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -58,6 +60,7 @@
             this.BtnDeletePerson = new System.Windows.Forms.Button();
             this.BtnNewPerson = new System.Windows.Forms.Button();
             this.TpLocations = new System.Windows.Forms.TabPage();
+            this.BtnEditLocation = new System.Windows.Forms.Button();
             this.BtnSortLocations = new System.Windows.Forms.Button();
             this.OlvLocations = new BrightIdeasSoftware.ObjectListView();
             this.OlvcName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -67,17 +70,19 @@
             this.OlvcTown = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.BtnDeleteLocation = new System.Windows.Forms.Button();
             this.BtnNewLocation = new System.Windows.Forms.Button();
-            this.BtnEditAppointment = new System.Windows.Forms.Button();
-            this.BtnEditPerson = new System.Windows.Forms.Button();
-            this.BtnEditLocation = new System.Windows.Forms.Button();
+            this.CmsPersons = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.TsmiSortByName = new System.Windows.Forms.ToolStripMenuItem();
+            this.TsmiSortByPostcode = new System.Windows.Forms.ToolStripMenuItem();
+            this.TsmiSortByTown = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.OlvAppointments)).BeginInit();
             this.TcMain.SuspendLayout();
             this.TpAppointments.SuspendLayout();
-            this.contextMenuStrip1.SuspendLayout();
+            this.CmsAppointments.SuspendLayout();
             this.TpPersons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OlvPersons)).BeginInit();
             this.TpLocations.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OlvLocations)).BeginInit();
+            this.CmsPersons.SuspendLayout();
             this.SuspendLayout();
             // 
             // OlvAppointments
@@ -177,27 +182,38 @@
             this.TpAppointments.Text = "Termine";
             this.TpAppointments.UseVisualStyleBackColor = true;
             // 
+            // BtnEditAppointment
+            // 
+            this.BtnEditAppointment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnEditAppointment.Location = new System.Drawing.Point(511, 229);
+            this.BtnEditAppointment.Name = "BtnEditAppointment";
+            this.BtnEditAppointment.Size = new System.Drawing.Size(111, 23);
+            this.BtnEditAppointment.TabIndex = 11;
+            this.BtnEditAppointment.Text = "Termin bearbeiten";
+            this.BtnEditAppointment.UseVisualStyleBackColor = true;
+            this.BtnEditAppointment.Click += new System.EventHandler(this.BtnEditAppointment_Click);
+            // 
             // BtnSortAppointments
             // 
             this.BtnSortAppointments.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnSortAppointments.ContextMenuStrip = this.contextMenuStrip1;
+            this.BtnSortAppointments.ContextMenuStrip = this.CmsAppointments;
             this.BtnSortAppointments.Location = new System.Drawing.Point(511, 171);
             this.BtnSortAppointments.Name = "BtnSortAppointments";
-            this.BtnSortAppointments.Size = new System.Drawing.Size(109, 23);
+            this.BtnSortAppointments.Size = new System.Drawing.Size(111, 23);
             this.BtnSortAppointments.TabIndex = 10;
             this.BtnSortAppointments.Text = "Sortiere";
             this.BtnSortAppointments.UseVisualStyleBackColor = true;
             this.BtnSortAppointments.Click += new System.EventHandler(this.BtnSortAppointments_Click);
             // 
-            // contextMenuStrip1
+            // CmsAppointments
             // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.CmsAppointments.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TsmiSortByDescription,
             this.TsmiSortByPerson,
             this.TsmiSortByLocation,
             this.TsmiSortByDate});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(227, 92);
+            this.CmsAppointments.Name = "contextMenuStrip1";
+            this.CmsAppointments.Size = new System.Drawing.Size(227, 92);
             // 
             // TsmiSortByDescription
             // 
@@ -244,12 +260,24 @@
             this.TpPersons.Text = "Personen";
             this.TpPersons.UseVisualStyleBackColor = true;
             // 
+            // BtnEditPerson
+            // 
+            this.BtnEditPerson.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnEditPerson.Location = new System.Drawing.Point(511, 229);
+            this.BtnEditPerson.Name = "BtnEditPerson";
+            this.BtnEditPerson.Size = new System.Drawing.Size(111, 23);
+            this.BtnEditPerson.TabIndex = 12;
+            this.BtnEditPerson.Text = "Person bearbeiten";
+            this.BtnEditPerson.UseVisualStyleBackColor = true;
+            this.BtnEditPerson.Click += new System.EventHandler(this.BtnEditPerson_Click);
+            // 
             // BtnSortPersons
             // 
             this.BtnSortPersons.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnSortPersons.ContextMenuStrip = this.CmsPersons;
             this.BtnSortPersons.Location = new System.Drawing.Point(511, 171);
             this.BtnSortPersons.Name = "BtnSortPersons";
-            this.BtnSortPersons.Size = new System.Drawing.Size(109, 23);
+            this.BtnSortPersons.Size = new System.Drawing.Size(111, 23);
             this.BtnSortPersons.TabIndex = 9;
             this.BtnSortPersons.Text = "Sortiere";
             this.BtnSortPersons.UseVisualStyleBackColor = true;
@@ -314,7 +342,7 @@
             // 
             this.OlvcFirstname.CellPadding = null;
             this.OlvcFirstname.Text = "Vorname";
-            this.OlvcFirstname.Width = 100;
+            this.OlvcFirstname.Width = 90;
             // 
             // OlvcPersonStreet
             // 
@@ -376,12 +404,23 @@
             this.TpLocations.Text = "Orte";
             this.TpLocations.UseVisualStyleBackColor = true;
             // 
+            // BtnEditLocation
+            // 
+            this.BtnEditLocation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnEditLocation.Location = new System.Drawing.Point(511, 229);
+            this.BtnEditLocation.Name = "BtnEditLocation";
+            this.BtnEditLocation.Size = new System.Drawing.Size(111, 23);
+            this.BtnEditLocation.TabIndex = 12;
+            this.BtnEditLocation.Text = "Ort bearbeiten";
+            this.BtnEditLocation.UseVisualStyleBackColor = true;
+            this.BtnEditLocation.Click += new System.EventHandler(this.BtnEditLocation_Click);
+            // 
             // BtnSortLocations
             // 
             this.BtnSortLocations.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnSortLocations.Location = new System.Drawing.Point(511, 171);
             this.BtnSortLocations.Name = "BtnSortLocations";
-            this.BtnSortLocations.Size = new System.Drawing.Size(109, 23);
+            this.BtnSortLocations.Size = new System.Drawing.Size(111, 23);
             this.BtnSortLocations.TabIndex = 10;
             this.BtnSortLocations.Text = "Sortiere";
             this.BtnSortLocations.UseVisualStyleBackColor = true;
@@ -464,38 +503,35 @@
             this.BtnNewLocation.UseVisualStyleBackColor = true;
             this.BtnNewLocation.Click += new System.EventHandler(this.BtnNewLocation_Click);
             // 
-            // BtnEditAppointment
+            // CmsPersons
             // 
-            this.BtnEditAppointment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnEditAppointment.Location = new System.Drawing.Point(511, 229);
-            this.BtnEditAppointment.Name = "BtnEditAppointment";
-            this.BtnEditAppointment.Size = new System.Drawing.Size(109, 23);
-            this.BtnEditAppointment.TabIndex = 11;
-            this.BtnEditAppointment.Text = "Termin bearbeiten";
-            this.BtnEditAppointment.UseVisualStyleBackColor = true;
-            this.BtnEditAppointment.Click += new System.EventHandler(this.BtnEditAppointment_Click);
+            this.CmsPersons.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TsmiSortByName,
+            this.TsmiSortByPostcode,
+            this.TsmiSortByTown});
+            this.CmsPersons.Name = "CmsPersons";
+            this.CmsPersons.Size = new System.Drawing.Size(215, 70);
             // 
-            // BtnEditPerson
+            // TsmiSortByName
             // 
-            this.BtnEditPerson.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnEditPerson.Location = new System.Drawing.Point(511, 229);
-            this.BtnEditPerson.Name = "BtnEditPerson";
-            this.BtnEditPerson.Size = new System.Drawing.Size(109, 23);
-            this.BtnEditPerson.TabIndex = 12;
-            this.BtnEditPerson.Text = "Person bearbeiten";
-            this.BtnEditPerson.UseVisualStyleBackColor = true;
-            this.BtnEditPerson.Click += new System.EventHandler(this.BtnEditPerson_Click);
+            this.TsmiSortByName.Name = "TsmiSortByName";
+            this.TsmiSortByName.Size = new System.Drawing.Size(214, 22);
+            this.TsmiSortByName.Text = "Nach Nachname sortieren";
+            this.TsmiSortByName.Click += new System.EventHandler(this.TsmiSortByName_Click);
             // 
-            // BtnEditLocation
+            // TsmiSortByPostcode
             // 
-            this.BtnEditLocation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnEditLocation.Location = new System.Drawing.Point(511, 229);
-            this.BtnEditLocation.Name = "BtnEditLocation";
-            this.BtnEditLocation.Size = new System.Drawing.Size(109, 23);
-            this.BtnEditLocation.TabIndex = 12;
-            this.BtnEditLocation.Text = "Ort bearbeiten";
-            this.BtnEditLocation.UseVisualStyleBackColor = true;
-            this.BtnEditLocation.Click += new System.EventHandler(this.BtnEditLocation_Click);
+            this.TsmiSortByPostcode.Name = "TsmiSortByPostcode";
+            this.TsmiSortByPostcode.Size = new System.Drawing.Size(214, 22);
+            this.TsmiSortByPostcode.Text = "Nach Postleitzahl sortieren";
+            this.TsmiSortByPostcode.Click += new System.EventHandler(this.TsmiSortByPostcode_Click);
+            // 
+            // TsmiSortByTown
+            // 
+            this.TsmiSortByTown.Name = "TsmiSortByTown";
+            this.TsmiSortByTown.Size = new System.Drawing.Size(214, 22);
+            this.TsmiSortByTown.Text = "Nach Stadt sortieren";
+            this.TsmiSortByTown.Click += new System.EventHandler(this.TsmiSortByTown_Click);
             // 
             // Form1
             // 
@@ -509,12 +545,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.OlvAppointments)).EndInit();
             this.TcMain.ResumeLayout(false);
             this.TpAppointments.ResumeLayout(false);
-            this.contextMenuStrip1.ResumeLayout(false);
+            this.CmsAppointments.ResumeLayout(false);
             this.TpPersons.ResumeLayout(false);
             this.TpPersons.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OlvPersons)).EndInit();
             this.TpLocations.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.OlvLocations)).EndInit();
+            this.CmsPersons.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -554,7 +591,7 @@
         private BrightIdeasSoftware.OLVColumn OlvcAppointmentDescription;
         private System.Windows.Forms.Button BtnSortAppointments;
         private System.Windows.Forms.Button BtnSortLocations;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ContextMenuStrip CmsAppointments;
         private System.Windows.Forms.ToolStripMenuItem TsmiSortByPerson;
         private System.Windows.Forms.ToolStripMenuItem TsmiSortByDate;
         private System.Windows.Forms.ToolStripMenuItem TsmiSortByLocation;
@@ -562,6 +599,10 @@
         private System.Windows.Forms.Button BtnEditAppointment;
         private System.Windows.Forms.Button BtnEditPerson;
         private System.Windows.Forms.Button BtnEditLocation;
+        private System.Windows.Forms.ContextMenuStrip CmsPersons;
+        private System.Windows.Forms.ToolStripMenuItem TsmiSortByName;
+        private System.Windows.Forms.ToolStripMenuItem TsmiSortByPostcode;
+        private System.Windows.Forms.ToolStripMenuItem TsmiSortByTown;
     }
 }
 

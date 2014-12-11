@@ -239,9 +239,7 @@
 
         private void BtnSortPersons_Click(object sender, EventArgs e)
         {
-            OlvPersons.ClearObjects();
-            _Persons.Sort();
-            OlvPersons.SetObjects(_Persons);
+            BtnSortPersons.ContextMenuStrip.Show(BtnSortPersons, 0, 23);
         }
 
         private void BtnNewPerson_Click(object sender, EventArgs e)
@@ -268,6 +266,17 @@
 
             _Persons.Remove(personToDelete);
             OlvPersons.RemoveObject(personToDelete);
+
+            if (_Appointments.Any(app => app.PersonOfAppointment.Equals(personToDelete)))
+            {
+                List<Appointment> appointmentsToDelete = _Appointments.Where(app => app.PersonOfAppointment.Equals(personToDelete)).ToList();
+
+                if (!appointmentsToDelete.Any())
+                    return;
+
+                _Appointments.RemoveAll(app => app.PersonOfAppointment.Equals(personToDelete));
+                OlvAppointments.RemoveObjects(appointmentsToDelete);
+            }
         }
 
         private void BtnSortLocations_Click(object sender, EventArgs e)
@@ -299,6 +308,17 @@
                 return;
             _Locations.Remove(locationToDelete);
             OlvLocations.RemoveObject(locationToDelete);
+
+            if (_Appointments.Any(app => app.LocationOfAppointment.Equals(locationToDelete)))
+            {
+                List<Appointment> appointmentsToDelete = _Appointments.Where(app => app.LocationOfAppointment.Equals(locationToDelete)).ToList();
+
+                if (!appointmentsToDelete.Any())
+                    return;
+
+                _Appointments.RemoveAll(app => app.LocationOfAppointment.Equals(locationToDelete));
+                OlvAppointments.RemoveObjects(appointmentsToDelete);
+            }
         }
 
         private void SortAppointments(IComparer<Appointment> comparer)
@@ -386,6 +406,28 @@
 
             currentPerson.Clone(frm.Newperson);
             OlvPersons.RefreshObject(currentPerson);
+        }
+
+        private void TsmiSortByName_Click(object sender, EventArgs e)
+        {
+            SortPersons(new PersonByLastNameComparer());
+        }
+
+        private void SortPersons(IComparer<Person> comparer)
+        {
+            OlvPersons.ClearObjects();
+            _Persons.Sort(comparer);
+            OlvPersons.SetObjects(_Persons);
+        }
+        
+        private void TsmiSortByPostcode_Click(object sender, EventArgs e)
+        {
+            SortPersons(new PersonByPostCodeComparer());
+        }
+
+        private void TsmiSortByTown_Click(object sender, EventArgs e)
+        {
+            SortPersons(new PersonByTownComparer());
         }
     }
 }
