@@ -233,7 +233,6 @@
         private void TbFilterPerson_TextChanged(object sender, EventArgs e)
         {
             OlvPersons.ClearObjects();
-
             OlvPersons.SetObjects(TbFilterPerson.Text == string.Empty ? _Persons : _Persons.Where(pers => pers.LastName.Contains(TbFilterPerson.Text)));
         }
 

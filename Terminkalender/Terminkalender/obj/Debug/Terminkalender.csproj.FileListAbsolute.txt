@@ -11,6 +11,3 @@ C:\#Schule\AW - Lehmann\Terminkalender\Terminkalender\obj\Debug\Terminkalender.F
 C:\#Schule\AW - Lehmann\Terminkalender\Terminkalender\obj\Debug\Terminkalender.Forms.NewLocationForm.resources
 C:\#Schule\AW - Lehmann\Terminkalender\Terminkalender\bin\Debug\ObjectListView.dll
 C:\#Schule\AW - Lehmann\Terminkalender\Terminkalender\obj\Debug\Terminkalender.Forms.NewAppointmentForm.resources
-C:\Users\sascha.berghaus\Desktop\Ausbildung\2.Jahr\AW-Praxis\Terminkalender\Terminkalender\Terminkalender\bin\Debug\Terminkalender.exe.config
-C:\Users\sascha.berghaus\Desktop\Ausbildung\2.Jahr\AW-Praxis\Terminkalender\Terminkalender\Terminkalender\obj\Debug\Terminkalender.exe
-C:\Users\sascha.berghaus\Desktop\Ausbildung\2.Jahr\AW-Praxis\Terminkalender\Terminkalender\Terminkalender\obj\Debug\Terminkalender.pdb
